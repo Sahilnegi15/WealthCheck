@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+
 from app.db import init_db
 from app.routes.user import router as user_router
 from app.routes.expense import (
@@ -7,15 +8,18 @@ from app.routes.expense import (
 from app.routes.analytics import (
     router as analytics_router
 )
-from app.routes.stock import (
-    router as stock_router
-)
+from app.routes import stock
 from app.routes.portfolio import (
     router as portfolio_router
 )
 from app.routes.watchlist import (
     router as watchlist_router
 )
+
+from app.routes.Stock_analyse import (
+    router as Stock_analyse_router
+)
+
 from fastapi.middleware.cors import (
     CORSMiddleware
 )
@@ -72,10 +76,16 @@ app.include_router(
     tags=["Portfolio"]
 )
 
+
 app.include_router(
-    watchlist_router,
+    stock.router,
+    prefix="/api"
+)
 
-    prefix="/api/watchlist",
 
-    tags=["Watchlist"]
+app.include_router(
+
+    Stock_analyse_router,
+
+    prefix="/api"
 )

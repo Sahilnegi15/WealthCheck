@@ -1,7 +1,7 @@
 import sqlite3
 
 
-DB_NAME = "finsight.db"
+DB_NAME = "WealthCheck.db"
 
 
 def get_connection():

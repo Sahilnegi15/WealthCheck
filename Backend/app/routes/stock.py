@@ -1,21 +1,44 @@
 from fastapi import APIRouter
 import yfinance as yf
 
-
-router = APIRouter()
+router = APIRouter(
+    prefix="/stocks",
+    tags=["Stocks"]
+)
 
 
 @router.get("/{symbol}")
-def get_stock(symbol: str):
+async def get_stock(symbol: str):
 
-    ticker = yf.Ticker(symbol)
+    stock = yf.Ticker(symbol)
 
-    info = ticker.info
+    info = stock.info
+
 
     return {
         "symbol": symbol.upper(),
-        "name": info.get("longName"),
-        "price": info.get("currentPrice"),
-        "currency": info.get("currency"),
-        "market_cap": info.get("marketCap")
+
+        "name": info.get(
+            "shortName"
+        ),
+
+        "price": info.get(
+            "currentPrice"
+        ),
+
+        "day_high": info.get(
+            "dayHigh"
+        ),
+
+        "day_low": info.get(
+            "dayLow"
+        ),
+
+        "market_cap": info.get(
+            "marketCap"
+        ),
+
+        "currency": info.get(
+            "currency"
+        )
     }

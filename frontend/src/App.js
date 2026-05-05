@@ -1,25 +1,165 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
-function App() {
+import {
+  AuthProvider
+} from "./context/AuthContext";
+
+import ProtectedRoute
+from "./components/ProtectedRoute";
+
+// import Sidebar
+// from "./components/Sidebar";
+
+import LoginPage
+from "./pages/LoginPage";
+
+import DashboardPage
+from "./pages/DashboardPage";
+
+import ExpensesPage
+from "./pages/ExpensesPage";
+
+import RegisterPage from "./pages/RegisterPage";
+import PortfolioPage
+from "./pages/PortfolioPage";
+
+import MarketPage
+from "./pages/MarketPage";
+
+
+// function Layout(
+//   { children }
+// ) {
+
+//   return (
+
+//     <div
+//       className="
+//       flex
+//     "
+//     >
+
+//       <Sidebar />
+
+//       <div
+//         className="
+//         flex-1
+//         p-6
+//       "
+//       >
+
+//         {children}
+
+//       </div>
+
+//     </div>
+//   );
+// }
+
+
+export default function
+App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <AuthProvider>
+
+      <BrowserRouter>
+
+        <Routes>
+
+          <Route
+            path="/"
+            element={
+              <LoginPage />
+            }
+          />
+
+          <Route
+            path="/register"
+            element={
+              <RegisterPage />
+            }
+          />
+
+
+          <Route
+            path="/Dashboard"
+            element={
+
+              <ProtectedRoute>
+
+                
+
+                  <DashboardPage />
+
+            
+
+              </ProtectedRoute>
+            }
+          />
+
+
+          <Route
+            path="/expenses"
+            element={
+
+              <ProtectedRoute>
+
+                
+
+                  <ExpensesPage />
+
+                
+
+              </ProtectedRoute>
+            }
+          />
+
+          
+
+
+          <Route
+            path="/portfolio"
+            element={
+
+              <ProtectedRoute>
+
+                
+
+                  <PortfolioPage />
+
+                
+
+              </ProtectedRoute>
+            }
+          />
+
+
+          <Route
+            path="/market"
+            element={
+
+              <ProtectedRoute>
+
+                
+
+                  <MarketPage />
+
+                
+
+              </ProtectedRoute>
+            }
+          />
+
+        </Routes>
+
+      </BrowserRouter>
+
+    </AuthProvider>
   );
 }
-
-export default App;
