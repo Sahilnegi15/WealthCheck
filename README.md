@@ -1,45 +1,72 @@
-WealthCheck
+# WEALTHCHECK
 
-A full-stack Financial Intelligence Platform built with React.js, FastAPI, Python, and MySQL that helps users track expenses, analyze financial behavior, and gain stock market insights through interactive dashboards and real-time analytics.
+A full-stack Financial Intelligence Platform built using React.js, FastAPI, Python, MySQL, and Time Series Analysis to help users track expenses, analyze financial data, and gain stock market insights through interactive dashboards and real-time analytics.
 
-🚀 Features
+---
 
-📊 Expense Tracking
-Track income, expenses, and savings
-Categorize transactions for better financial insights
-Monthly and yearly spending summaries
-📈 Financial Analytics
-Interactive dashboards with real-time visualizations
-Time series analysis for financial forecasting
-Trend analysis and spending behavior insights
-📉 Stock Market Insights
-Market trend monitoring
-Historical stock data analysis
-Financial performance visualizations
-⚡ Scalable Data Pipelines
-ETL pipelines for transactional and market data
-Automated data ingestion and transformation
-Real-time reporting architecture
-🔐 Secure Backend Services
-RESTful APIs with FastAPI
-Authentication and authorization workflows
-Optimized MySQL database models
+## 🚀 FEATURES
 
+- 📊 Expense Tracking
+  - Track income, expenses, and savings
+  - Categorize transactions
+  - Monthly and yearly financial summaries
 
-🛠️ Tech Stack
-Frontend
-React.js
-Axios
-Chart.js / Recharts
-Tailwind CSS / CSS Modules
-Backend
-FastAPI
-Python
-SQLAlchemy
-Pydantic
-Database
-MySQL
-Data & Analytics
-Pandas
-NumPy
-Time Series Analysis
+- 📈 Financial Analytics
+  - Interactive dashboards with real-time visualizations
+  - Spending behavior analysis
+  - Financial trend forecasting
+
+- 📉 Stock Market Insights
+  - Historical stock analysis
+  - Market trend visualization
+  - Comparative analytics
+
+- ⚡ Scalable ETL Pipelines
+  - Automated data ingestion
+  - Data transformation and analysis
+  - Real-time reporting workflows
+
+- 🔐 Secure Backend Services
+  - REST APIs with FastAPI
+  - Authentication and authorization
+  - Optimized MySQL database design
+
+---
+
+## 🛠️ TECH STACK
+
+### Frontend
+- React.js
+- Axios
+- Chart.js / Recharts
+- Tailwind CSS
+
+### Backend
+- FastAPI
+- Python
+- SQLAlchemy
+- Pydantic
+
+### Database
+- MySQL
+
+### Data Analytics
+- Pandas
+- NumPy
+- Time Series Analysis
+
+---
+
+## 🏗️ SYSTEM ARCHITECTURE
+
+```text
+React Frontend
+       │
+       ▼
+FastAPI Backend
+       │
+       ▼
+ETL & Analytics Layer
+       │
+       ▼
+MySQL Database
