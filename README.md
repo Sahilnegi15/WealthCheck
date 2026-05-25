@@ -3,6 +3,7 @@ WealthCheck
 A full-stack Financial Intelligence Platform built with React.js, FastAPI, Python, and MySQL that helps users track expenses, analyze financial behavior, and gain stock market insights through interactive dashboards and real-time analytics.
 
 🚀 Features
+
 📊 Expense Tracking
 Track income, expenses, and savings
 Categorize transactions for better financial insights
@@ -23,6 +24,8 @@ Real-time reporting architecture
 RESTful APIs with FastAPI
 Authentication and authorization workflows
 Optimized MySQL database models
+
+
 🛠️ Tech Stack
 Frontend
 React.js
